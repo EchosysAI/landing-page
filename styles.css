@@ -1,4 +1,72 @@
-#hero {
+body {
+    margin: 0;
+    padding: 0 1.5rem;
+}
+
+*{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inter-font {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.main-hero {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid yellow;
+    padding: 2rem;
+    font-size: 2rem;
+}
+.navbar-buttons button {
+    background-color: unset;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+.logo {
+    flex-shrink: 0;
+}
+.navbar-buttons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.flex-basis-navbar {
+    flex-basis: 13rem;
+}
+.navbar-login {
+    flex-shrink: 0;
+}
+.navbar-login button {
+    background-color: unset;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+.navbar-login .navbar-login-button {
+}
+.navbar-login .navbar-trial-button {
+    border: none;
+    color: antiquewhite;
+    background-color: #310e68;
+    background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+
+}
+.hero {
     font-weight: bold;
     color: dodgerblue;
 }
