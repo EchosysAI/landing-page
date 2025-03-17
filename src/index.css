@@ -1,0 +1,138 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 250 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 10% 10%;
+
+    --primary: 255 70% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 240 40% 96.1%;
+    --secondary-foreground: 255 70% 45%;
+
+    --muted: 240 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 247 34% 95%;
+    --accent-foreground: 255 70% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 255 70% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/80 border border-white/20 shadow-glass;
+  }
+  
+  .section-heading {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight;
+  }
+  
+  .section-subheading {
+    @apply text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto;
+  }
+  
+  .feature-card {
+    @apply p-6 glass-card rounded-xl transition-all duration-300 hover:shadow-lg;
+  }
+
+  .button-shine-effect {
+    @apply relative overflow-hidden;
+  }
+  
+  .button-shine-effect::after {
+    @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-white/20;
+    animation: shine 2.5s infinite linear;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100%;
+      opacity: 0;
+    }
+    20% {
+      left: 100%;
+      opacity: 0.4;
+    }
+    100% {
+      left: 100%;
+      opacity: 0;
+    }
+  }
+
+  .intersection-reveal {
+    @apply opacity-0 transition-all duration-700 ease-out;
+  }
+  
+  .intersection-reveal.revealed {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .intersection-reveal.from-bottom {
+    @apply translate-y-10;
+  }
+  
+  .intersection-reveal.from-left {
+    @apply -translate-x-10;
+  }
+  
+  .intersection-reveal.from-right {
+    @apply translate-x-10;
+  }
+  
+  .bg-gradient-blur {
+    @apply relative overflow-hidden;
+  }
+  
+  .bg-gradient-blur::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-gradient-to-r from-echoPurple-500/10 to-echoBlue-500/10 backdrop-blur-3xl -z-10;
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(176, 169, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(176, 169, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
